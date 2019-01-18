@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework.cloud:spring-cloud-cloudfoundry-web:1.0.2.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-cloudfoundry-web/1.0.2.BUILD-SNAPSHOT/spring-cloud-cloudfoundry-web-1.0.2.BUILD-20170120.215412-946.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-cloudfoundry-web/1.0.2.BUILD-SNAPSHOT/spring-cloud-cloudfoundry-web-1.0.2.BUILD-20170120.215412-946-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-cloudfoundry-web/1.0.2.BUILD-SNAPSHOT/spring-cloud-cloudfoundry-web-1.0.2.BUILD-20170120.215412-946-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

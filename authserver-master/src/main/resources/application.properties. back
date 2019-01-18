@@ -1,0 +1,8 @@
+server.contextPath=/uaa
+security.user.password=password
+security.ignored=/css/**,/js/**,/favicon.ico,/webjars/**
+logging.level.org.springframework.security=DEBUG
+# 定位模板的目录
+spring.mvc.view.prefix=classpath:/templates/
+# 给返回的页面添加后缀名
+spring.mvc.view.suffix=.flt

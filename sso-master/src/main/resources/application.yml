@@ -1,0 +1,55 @@
+debug: true
+server:
+  port: 9999
+
+security:
+  ignored: /,/favicon.ico,/index.html,/home.html,/dashboard.html,/js/**,/css/**,/webjars/**
+  sessions: ALWAYS
+#  oauth2:
+#    sso:
+#      loginPath: /dashboard/login
+management:
+  security:
+    role: HERO
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    com.netflix.discovery: 'OFF'
+
+spring:
+  profiles: default
+  datasource:
+    #### Datasource 配置 ####
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/auth
+    # url: jdbc:mysql://127.0.0.1:3306/consumer
+    driverClassName: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mvc:
+    view:
+      suffix: .html
+      prefix: /
+---
+security:
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:8080/aa/oauth/token
+      userAuthorizationUri: http://localhost:8080/aa/oauth/authorize
+      clientId: acme
+      clientSecret: acmesecret
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGp/Q5lh0P8nPL21oMMrt2RrkT9AW5jgYwLfSUnJVc9G6uR3cXRRDCjHqWU5WYwivcF180A6CWp/ireQFFBNowgc5XaA0kPpzEtgsA5YsNX7iSnUibB004iBTfU9hZ2Rbsc8cWqynT0RyN4TP1RYVSeVKvMQk4GT1r7JCEC+TNu1ELmbNwMQyzKjsfBXyIOCFU/E94ktvsTZUHF4Oq44DBylCDsS1k7/sfZC2G5EU7Oz0mhG8+Uz6MSEQHtoIi6mc8u64Rwi3Z3tscuWG2ShtsUFuNSAFNkY7LkLn+/hxLCu2bNISMaESa8dG22CIMuIeRLVcAmEWEWH5EEforTg+QIDAQAB
+          -----END PUBLIC KEY-----
+      id: openid
+      serviceId: ${PREFIX:}resource
+    sso:
+      login-path: /dashboard/login

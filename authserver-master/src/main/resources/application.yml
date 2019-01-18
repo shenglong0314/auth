@@ -1,0 +1,19 @@
+
+spring:
+  datasource:
+    #### Datasource 配置 ####
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/auth
+    # url: jdbc:mysql://127.0.0.1:3306/consumer
+    driverClassName: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+security:
+  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
+server:
+  context-path: /aa
+debug: true
